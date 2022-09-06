@@ -16,8 +16,9 @@ function createUser(name, id, noOfProjects) {
     return user.noOfProjects;
   };
   user.changeName = function (newName) {
+    let prevName = user.name;
     user.name = newName;
-    return user.name;
+    return prevName;
   };
   user.incrementProject = function () {
     user.noOfProjects += 1;
@@ -43,6 +44,7 @@ console.log(user1.incrementProject());
 console.log(user1.decrementProject());
 console.log(user1.getProjects());
 console.log(user1.changeName("Arya"));
+console.log(user1.name);
 console.groupEnd();
 
 console.group(user2.name);
@@ -54,6 +56,7 @@ console.log(user2.incrementProject());
 console.log(user2.decrementProject());
 console.log(user2.getProjects());
 console.log(user2.changeName("Ram"));
+console.log(user2.name);
 console.groupEnd();
 ```
 
@@ -65,8 +68,9 @@ let createUserMethods = {
     return this.noOfProjects;
   },
   changeName: function (newName) {
+    let prevName = this.name;
     this.name = newName;
-    return this.name;
+    return prevName;
   },
   incrementProject: function () {
     this.noOfProjects += 1;
@@ -98,6 +102,7 @@ console.log(user1.incrementProject());
 console.log(user1.decrementProject());
 console.log(user1.getProjects());
 console.log(user1.changeName("Arya"));
+console.log(user1.name);
 console.groupEnd();
 
 console.group(user2.name);
@@ -109,6 +114,7 @@ console.log(user2.incrementProject());
 console.log(user2.decrementProject());
 console.log(user2.getProjects());
 console.log(user2.changeName("Ram"));
+console.log(user2.name);
 console.groupEnd();
 ```
 
@@ -125,8 +131,9 @@ CreateUser.prototype = {
     return this.noOfProjects;
   },
   changeName: function (newName) {
+    let prevName = this.name;
     this.name = newName;
-    return this.name;
+    return prevName;
   },
   incrementProject: function () {
     this.noOfProjects += 1;
@@ -150,6 +157,7 @@ console.log(user1.incrementProject());
 console.log(user1.decrementProject());
 console.log(user1.getProjects());
 console.log(user1.changeName("Arya"));
+console.log(user1.name);
 console.groupEnd();
 
 console.group(user2.name);
@@ -161,6 +169,7 @@ console.log(user2.incrementProject());
 console.log(user2.decrementProject());
 console.log(user2.getProjects());
 console.log(user2.changeName("Ram"));
+console.log(user2.name);
 console.groupEnd();
 ```
 
@@ -177,8 +186,9 @@ class User {
     return this.noOfProjects;
   }
   changeName(newName) {
+    let prevName = this.name;
     this.name = newName;
-    return this.name;
+    return prevName;
   }
   incrementProject() {
     this.noOfProjects += 1;
@@ -203,6 +213,7 @@ console.log(user1.incrementProject());
 console.log(user1.decrementProject());
 console.log(user1.getProjects());
 console.log(user1.changeName("Arya"));
+console.log(user1.name);
 console.groupEnd();
 
 console.group(user2.name);
@@ -214,6 +225,7 @@ console.log(user2.incrementProject());
 console.log(user2.decrementProject());
 console.log(user2.getProjects());
 console.log(user2.changeName("Ram"));
+console.log(user2.name);
 console.groupEnd();
 ```
 
