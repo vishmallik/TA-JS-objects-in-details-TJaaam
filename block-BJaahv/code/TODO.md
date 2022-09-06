@@ -5,9 +5,217 @@ Create a object using the following patterns given below.
 ## Create in all 4 formats
 
 - [ ] Using function to create object
+
+```js
+function createUser(name, id, noOfProjects) {
+  let user = {};
+  user.name = name;
+  user.id = id;
+  user.noOfProjects = noOfProjects;
+  user.getProjects = function () {
+    return user.noOfProjects;
+  };
+  user.changeName = function (newName) {
+    user.name = newName;
+    return user.name;
+  };
+  user.incrementProject = function () {
+    user.noOfProjects += 1;
+    return user.noOfProjects;
+  };
+  user.decrementProject = function () {
+    user.noOfProjects -= 1;
+    return user.noOfProjects;
+  };
+  return user;
+}
+
+//test
+let user1 = createUser("John", 1, 55);
+let user2 = createUser("Sam", 9, 74);
+
+console.group(user1.name);
+console.log(user1.name);
+console.log(user1.id);
+console.log(user1.noOfProjects);
+console.log(user1.incrementProject());
+console.log(user1.incrementProject());
+console.log(user1.decrementProject());
+console.log(user1.getProjects());
+console.log(user1.changeName("Arya"));
+console.groupEnd();
+
+console.group(user2.name);
+console.log(user2.name);
+console.log(user2.id);
+console.log(user2.noOfProjects);
+console.log(user2.incrementProject());
+console.log(user2.incrementProject());
+console.log(user2.decrementProject());
+console.log(user2.getProjects());
+console.log(user2.changeName("Ram"));
+console.groupEnd();
+```
+
 - [ ] Using Object.create (prototypal pattern)
+
+```js
+let createUserMethods = {
+  getProjects: function () {
+    return this.noOfProjects;
+  },
+  changeName: function (newName) {
+    this.name = newName;
+    return this.name;
+  },
+  incrementProject: function () {
+    this.noOfProjects += 1;
+    return this.noOfProjects;
+  },
+  decrementProject: function () {
+    this.noOfProjects -= 1;
+    return this.noOfProjects;
+  },
+};
+function createUser(name, id, noOfProjects) {
+  let user = Object.create(createUserMethods);
+  user.name = name;
+  user.id = id;
+  user.noOfProjects = noOfProjects;
+  return user;
+}
+
+//test
+let user1 = createUser("John", 1, 55);
+let user2 = createUser("Sam", 9, 74);
+
+console.group(user1.name);
+console.log(user1.name);
+console.log(user1.id);
+console.log(user1.noOfProjects);
+console.log(user1.incrementProject());
+console.log(user1.incrementProject());
+console.log(user1.decrementProject());
+console.log(user1.getProjects());
+console.log(user1.changeName("Arya"));
+console.groupEnd();
+
+console.group(user2.name);
+console.log(user2.name);
+console.log(user2.id);
+console.log(user2.noOfProjects);
+console.log(user2.incrementProject());
+console.log(user2.incrementProject());
+console.log(user2.decrementProject());
+console.log(user2.getProjects());
+console.log(user2.changeName("Ram"));
+console.groupEnd();
+```
+
 - [ ] Using Pseudoclassical Way
+
+```js
+function CreateUser(name, id, noOfProjects) {
+  this.name = name;
+  this.id = id;
+  this.noOfProjects = noOfProjects;
+}
+CreateUser.prototype = {
+  getProjects: function () {
+    return this.noOfProjects;
+  },
+  changeName: function (newName) {
+    this.name = newName;
+    return this.name;
+  },
+  incrementProject: function () {
+    this.noOfProjects += 1;
+    return this.noOfProjects;
+  },
+  decrementProject: function () {
+    this.noOfProjects -= 1;
+    return this.noOfProjects;
+  },
+};
+//test
+let user1 = new CreateUser("John", 1, 55);
+let user2 = new CreateUser("Sam", 9, 74);
+
+console.group(user1.name);
+console.log(user1.name);
+console.log(user1.id);
+console.log(user1.noOfProjects);
+console.log(user1.incrementProject());
+console.log(user1.incrementProject());
+console.log(user1.decrementProject());
+console.log(user1.getProjects());
+console.log(user1.changeName("Arya"));
+console.groupEnd();
+
+console.group(user2.name);
+console.log(user2.name);
+console.log(user2.id);
+console.log(user2.noOfProjects);
+console.log(user2.incrementProject());
+console.log(user2.incrementProject());
+console.log(user2.decrementProject());
+console.log(user2.getProjects());
+console.log(user2.changeName("Ram"));
+console.groupEnd();
+```
+
 - [ ] Using Class
+
+```js
+class User {
+  constructor(name, id, noOfProjects) {
+    this.name = name;
+    this.id = id;
+    this.noOfProjects = noOfProjects;
+  }
+  getProjects() {
+    return this.noOfProjects;
+  }
+  changeName(newName) {
+    this.name = newName;
+    return this.name;
+  }
+  incrementProject() {
+    this.noOfProjects += 1;
+    return this.noOfProjects;
+  }
+  decrementProject() {
+    this.noOfProjects -= 1;
+    return this.noOfProjects;
+  }
+}
+
+//test
+let user1 = new User("John", 1, 55);
+let user2 = new User("Sam", 9, 74);
+
+console.group(user1.name);
+console.log(user1.name);
+console.log(user1.id);
+console.log(user1.noOfProjects);
+console.log(user1.incrementProject());
+console.log(user1.incrementProject());
+console.log(user1.decrementProject());
+console.log(user1.getProjects());
+console.log(user1.changeName("Arya"));
+console.groupEnd();
+
+console.group(user2.name);
+console.log(user2.name);
+console.log(user2.id);
+console.log(user2.noOfProjects);
+console.log(user2.incrementProject());
+console.log(user2.incrementProject());
+console.log(user2.decrementProject());
+console.log(user2.getProjects());
+console.log(user2.changeName("Ram"));
+console.groupEnd();
+```
 
 ## Requirements
 
