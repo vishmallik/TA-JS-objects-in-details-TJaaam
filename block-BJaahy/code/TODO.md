@@ -108,7 +108,7 @@ class Square {
     this.height = Math.sqrt(area);
   }
   static isEqual(sq1, sq2) {
-    return sq1 === sq2;
+    return sq1.area === sq2.area;
   }
 }
 ```
