@@ -211,7 +211,7 @@ let object = {
   dataDouble: [1, 2, 3],
   double: function () {
     console.log("this inside of outerFn double()");
-    console.log(this);
+    console.log(this); //object
     return this.data.map(function (item) {
       console.log(this); //window
       return item * 2;
@@ -221,7 +221,7 @@ let object = {
     console.log("this inside of outerFn doubleArrow()");
     console.log(this);
     return this.dataDouble.map((item) => {
-      console.log(this); // Object
+      console.log(this); // object
       return item * 2;
     });
   },
