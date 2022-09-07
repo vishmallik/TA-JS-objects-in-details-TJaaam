@@ -24,7 +24,7 @@ let createAnimalMethods = {
     this.location = newLocation;
   },
   summary: function () {
-    return `I live in ${this.location} and I have ${this.numberOfLegs}`;
+    return `I live in ${this.location} and I have ${this.numberOfLegs} legs`;
   },
 };
 
@@ -52,14 +52,8 @@ function createAnimal(location, numberOfLegs) {
 // - `summary()` - returns `I am ${name} and I am of ${color} color. I can also bark`
 
 let createDogMethods = {
-  eat: function () {
-    console.log(`I live in ${this.location} and I can eat`);
-  },
-  changeLocation: function (newLocation) {
-    this.location = newLocation;
-  },
   summary: function () {
-    return `I am ${this.name} and I am of ${this.color} color. I can also bark`;
+    return `I am ${this.name} and I am of ${this.color} color. I can also bark 🐶`;
   },
   bark: function () {
     alert(`I am ${this.name} and I can bark 🐶`);
@@ -73,13 +67,13 @@ let createDogMethods = {
 };
 
 function createDog(name, color, location, numberOfLegs) {
-  let dog = Object.create(createDogMethods);
+  let dog = createAnimal(location, numberOfLegs);
+  Object.setPrototypeOf(dog, createDogMethods);
   dog.name = name;
   dog.color = color;
-  dog.location = location;
-  dog.numberOfLegs = numberOfLegs;
   return dog;
 }
+Object.setPrototypeOf(createDogMethods, createAnimalMethods);
 // #### Cat
 
 // It will have all the properties and methods of the Animal. These are the extra properties and methods these dogs will have.
@@ -100,14 +94,8 @@ function createDog(name, color, location, numberOfLegs) {
 // - `summary()` - returns `I am ${name} and the color of my eyes are ${colorOfEyes}. I can also do meow meow`
 
 let createCatMethods = {
-  eat: function () {
-    console.log(`I live in ${this.location} and I can eat`);
-  },
-  changeLocation: function (newLocation) {
-    this.location = newLocation;
-  },
   summary: function () {
-    return `I am ${this.name} and the color of my eyes are ${this.colorOfEyes}. I can also do meow meow`;
+    return `I am ${this.name} and the color of my eyes are ${this.colorOfEyes}. I can also do meow meow 😹`;
   },
   meow: function () {
     alert(`I am ${this.name} and I can do meow meow 😹`);
@@ -121,10 +109,10 @@ let createCatMethods = {
 };
 
 function createCat(name, colorOfEyes, location, numberOfLegs) {
-  let cat = Object.create(createCatMethods);
+  let cat = createAnimal(location, numberOfLegs);
+  Object.setPrototypeOf(cat, createCatMethods);
   cat.name = name;
   cat.colorOfEyes = colorOfEyes;
-  cat.location = location;
-  cat.numberOfLegs = numberOfLegs;
   return cat;
 }
+Object.setPrototypeOf(createCatMethods, createAnimalMethods);
