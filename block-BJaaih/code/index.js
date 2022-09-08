@@ -63,7 +63,7 @@ Make sure it does not the changes the original array.
 
 // You code goes here
 Array.prototype.shuffle = function () {
-  return this.sort(() => 0.5 - Math.random());
+  return [...this].sort(() => 0.5 - Math.random());
 };
 
 // Test to check the shuffle method (It will return different output every time you call)
