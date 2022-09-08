@@ -46,24 +46,26 @@ class Book {
 }
 
 class BookList {
-  constructor(booksArray, index) {
-    this.allBooks = booksArray;
-    this.readBook = index;
+  constructor() {
+    this.books = [];
+    this.currentBookIndex = 0;
   }
-  add(book) {
-    return this.allBooks.concat(book);
+  add(book = []) {
+    this.books = this.books.concat(book);
+    return this.books;
   }
   getCurrentBook() {
-    return this.allBooks[this.readBook];
+    return this.books[this.currentBookIndex];
   }
   getNextBook() {
-    return this.allBooks[this.readBook + 1];
+    return this.books[this.currentBookIndex + 1];
   }
   getPrevBook() {
-    return this.allBooks[this.readBook - 1];
+    return this.books[this.currentBookIndex - 1];
   }
   changeCurrentBook(newIndex) {
-    this.readBook = newIndex;
+    this.currentBookIndex = newIndex;
+    return this.currentBookIndex;
   }
 }
 
@@ -84,10 +86,7 @@ let diaryOfYoungGirl = new Book(
 );
 let mockingBird = new Book("To Kill a Mockingbird", "Fiction", "Harper Lee");
 
-let list1 = new BookList(
-  [hungerGames, harryPotter, twilight, diaryOfYoungGirl, mockingBird],
-  2
-);
+let list1 = new BookList();
 console.group(`Testing Book Class`);
 console.log(hungerGames.title);
 console.log(harryPotter.category);
@@ -102,23 +101,15 @@ console.log(mockingBird.finishedDate);
 console.groupEnd();
 
 console.group(`Tesing BookList Class`);
-console.log(list1.allBooks);
-console.log(list1.readBook);
+list1.add([hungerGames, harryPotter, twilight, diaryOfYoungGirl, mockingBird]);
+console.log(list1.books);
+console.log(list1.getCurrentBook());
 
-list1.add([
-  "The Lion, the Witch and the Wardrobe",
-  "The Host",
-  "The Da Vinci Code",
-]);
+list1.changeCurrentBook(2);
 
-console.log(list1.allBooks);
+console.log(list1.currentBookIndex);
 console.log(list1.getCurrentBook());
 console.log(list1.getNextBook());
 console.log(list1.getPrevBook());
-
-list1.changeCurrentBook(5);
-
-console.log(list1.readBook);
-console.log(list1.getCurrentBook());
 console.groupEnd();
 ```
