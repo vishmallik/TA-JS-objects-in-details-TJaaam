@@ -67,6 +67,9 @@ function PersonConstructor() {
   this.greet = function () {
     console.log(`hello`);
   };
+  this.introduce = function () {
+    console.log(`Hi, my name is ${this.name}`);
+  };
 }
 
 // /********* Uncomment this line to test your work! *********/
@@ -77,8 +80,10 @@ simon.greet(); // -> Logs 'hello'
 
 function personFromConstructor(name, age) {
   // add code here
-  this.name = name;
-  this.age = age;
+  let obj = new PersonConstructor();
+  obj.name = name;
+  obj.age = age;
+  return obj;
 }
 
 var mike = new personFromConstructor("Mike", 30); //problem
@@ -86,14 +91,11 @@ var mike = new personFromConstructor("Mike", 30); //problem
 // /********* Uncomment these lines to test your work! *********/
 console.log(mike.name); // -> Logs 'Mike'
 console.log(mike.age); //-> Logs 30
-// mike.greet(); //-> Logs 'hello'//problem
+mike.greet(); //-> Logs 'hello'
 
 /*** CHALLENGE 3 of 3 ***/
-PersonConstructor.introduce = function () {
-  console.log(`Hi, my name is ${this.name}`);
-};
 
-// mike.introduce(); // -> Logs 'Hi, my name is Mike'//problem
+mike.introduce(); // -> Logs 'Hi, my name is Mike'
 
 /****************************************************************
                         USING ES6 CLASSES
@@ -153,20 +155,21 @@ function userFactory(name, score) {
 }
 
 var adminFunctionStore = Object.create(userFunctionStore);
-Object.setPrototypeOf(adminFactory, userFactory);
+
 function adminFactory(name, score) {
-  // user.type = "Admin";
+  let obj = userFactory(name, score);
+  obj.type = "Admin";
+  Object.setPrototypeOf(obj, adminFunctionStore);
+  return obj;
 }
 
-Object.setPrototypeOf(adminFactory, adminFunctionStore);
 /* Put code here for a method called sharePublicMessage*/
-function sharePublicMessage() {
+adminFunctionStore.sharePublicMessage = function () {
   console.log(`Welcome users!`);
-}
-Object.setPrototypeOf(adminFactory, sharePublicMessage);
+};
 
 var adminFromFactory = adminFactory("Eva", 5);
 
 // /********* Uncomment these lines to test your work! *********/
-// adminFromFactory.sayType(); // -> Logs "I am a Admin"
-// adminFromFactory.sharePublicMessage(); // -> Logs "Welcome users!"
+adminFromFactory.sayType(); // -> Logs "I am a Admin"
+adminFromFactory.sharePublicMessage(); // -> Logs "Welcome users!"
