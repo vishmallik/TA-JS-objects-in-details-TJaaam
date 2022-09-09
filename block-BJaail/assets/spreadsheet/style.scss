@@ -140,7 +140,7 @@ body {
   max-width: 100%;
   margin: 0 auto;
 }
-.flex {
+form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -177,21 +177,47 @@ h1 {
     color: #0066ff;
   }
 }
-table {
-  text-align: left;
-  thead {
-    border-top: 1px solid gainsboro;
-    border-bottom: 1px solid gainsboro;
-    th {
-      font-weight: 700;
-      padding: 0.8rem 0;
-    }
+.img-container {
+  img {
+    width: 100%;
   }
-  tr {
-    @extend thead;
-    td {
-      font-weight: 500;
-      padding: 0.8rem 0;
-    }
+}
+li {
+  text-align: center;
+  max-width: 22%;
+  margin: 2rem;
+  position: relative;
+  &:hover > i {
+    display: var(--fa-display, inline-block) !important;
   }
+  i {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: rgba(red, 0.5);
+    display: none !important;
+    cursor: pointer;
+  }
+}
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+p {
+  font-size: 1rem;
+}
+button {
+  padding: 0.8rem 1rem;
+  background-color: palevioletred;
+  border: 1px solid palegoldenrod;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+.flex {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
 }
