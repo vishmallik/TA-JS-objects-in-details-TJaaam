@@ -56,7 +56,6 @@ caption,
 tbody,
 tfoot,
 thead,
-table tr,
 tr,
 th,
 td,
@@ -150,30 +149,30 @@ body {
   margin: 0 auto;
 }
 
-.flex {
+form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.flex label,
-.flex input {
+form label,
+form input {
   display: block;
 }
-.flex input {
+form input {
   font-size: 1.2rem;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   border: 1px solid lightgrey;
   border-radius: 3px;
 }
-.flex input[type=submit] {
+form input[type=submit] {
   background-color: #0066ff;
   color: #fff;
   border: 1px solid #0066ff;
   margin-bottom: 5rem;
   cursor: pointer;
 }
-.flex input[type=submit]:active {
+form input[type=submit]:active {
   background-color: blue;
 }
 
@@ -188,18 +187,50 @@ h1 em {
   color: #0066ff;
 }
 
-table {
-  text-align: left;
+.img-container img {
+  width: 100%;
 }
-table thead, table tr {
-  border-top: 1px solid gainsboro;
-  border-bottom: 1px solid gainsboro;
+
+li {
+  text-align: center;
+  max-width: 22%;
+  margin: 2rem;
+  position: relative;
 }
-table thead th, table tr th {
-  font-weight: 700;
-  padding: 0.8rem 0;
+li:hover > i {
+  display: var(--fa-display, inline-block) !important;
 }
-table tr td {
-  font-weight: 500;
-  padding: 0.8rem 0;
+li i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: rgba(255, 0, 0, 0.5);
+  display: none !important;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.8rem 1rem;
+  background-color: palevioletred;
+  border: 1px solid palegoldenrod;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
 }/*# sourceMappingURL=style.css.map */
