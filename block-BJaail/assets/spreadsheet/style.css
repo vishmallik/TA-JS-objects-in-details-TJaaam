@@ -1,0 +1,236 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.5;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+form label,
+form input {
+  display: block;
+}
+form input {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+form input[type=submit] {
+  background-color: #0066ff;
+  color: #fff;
+  border: 1px solid #0066ff;
+  margin-bottom: 5rem;
+  cursor: pointer;
+}
+form input[type=submit]:active {
+  background-color: blue;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+h1 i {
+  color: #0066ff;
+}
+h1 em {
+  color: #0066ff;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+li {
+  text-align: center;
+  max-width: 22%;
+  margin: 2rem;
+  position: relative;
+}
+li:hover > i {
+  display: var(--fa-display, inline-block) !important;
+}
+li i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: rgba(255, 0, 0, 0.5);
+  display: none !important;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.8rem 1rem;
+  background-color: palevioletred;
+  border: 1px solid palegoldenrod;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=style.css.map */
