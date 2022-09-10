@@ -136,7 +136,7 @@ body {
   box-sizing: border-box;
 }
 .container {
-  width: 80%;
+  width: 40%;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -164,11 +164,7 @@ h1 {
   font-size: 3rem;
   text-align: center;
 }
-li {
-  text-align: center;
-  margin: 2rem;
-  position: relative;
-}
+
 h2 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -196,15 +192,20 @@ div {
   text-align: left;
   margin: 0.5rem 0;
 }
-.question-container {
-  width: 50%;
-  max-width: 100%;
-  margin: 0 auto;
-}
+
 h3 {
   font-weight: 500;
   font-size: 1.5rem;
 }
 body {
   background-color: #efccfd;
+}
+
+p {
+  text-align: left;
+  font-size: 1.2rem;
+}
+.reset {
+  text-align: center;
+  margin: 0 auto;
 }
